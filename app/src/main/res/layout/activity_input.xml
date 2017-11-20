@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="800dp"
+        android:layout_height="300dp"
+        android:src="@drawable/menu_bar"
+        android:layout_marginTop="-85dp"
+        />
+    <ImageView
+        android:layout_width="800dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="953dp"
+        android:src="@drawable/under_bar_letter"
+        />
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="80dp"
+        android:background="@drawable/menubutton"
+        android:layout_marginLeft="750dp"
+        android:layout_marginTop="25dp"
+        />
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="800dp"
+        android:layout_height="880dp"
+        android:layout_marginTop="128dp"
+        android:choiceMode="singleChoice"
+        android:divider="#923E4C"
+        android:dividerHeight="1.5dp" />
+</FrameLayout>

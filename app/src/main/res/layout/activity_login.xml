@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="kr.hs.emirim.wwhurin.myapplication.Menu1Activity">
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="600dp"
+        android:layout_height="600dp"
+        android:src="@drawable/logo"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="70dp"
+        />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="750dp"
+        android:layout_marginLeft="-500dp"
+        android:src="@drawable/id"
+        />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="850dp"
+        android:layout_marginLeft="-140dp"
+        android:src="@drawable/pass"
+        />
+    <EditText
+        android:id="@+id/id"
+        android:layout_width="350dp"
+        android:layout_height="85dp"
+        android:background="@drawable/box"
+        android:layout_marginTop="740dp"
+        />
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="350dp"
+        android:layout_height="85dp"
+        android:background="@drawable/box"
+        android:layout_marginTop="850dp"
+        android:layout_marginLeft="-350dp"
+        />
+    <Button
+        android:id="@+id/login"
+        android:layout_width="150dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="1000dp"
+        android:layout_marginLeft="-400dp"
+        android:background="@drawable/login"
+        />
+    <Button
+        android:id="@+id/welcome"
+        android:layout_width="150dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="1000dp"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/welcome"
+        />
+
+</LinearLayout>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="800dp"
+        android:layout_height="300dp"
+        android:src="@drawable/add_bar"
+        android:layout_marginTop="-85dp"
+        />
+    <ImageView
+        android:layout_width="800dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="953dp"
+        android:src="@drawable/under_bar" />
+
+    <ImageView
+        android:layout_width="700dp"
+        android:layout_height="700dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="215dp"
+        android:src="@drawable/list_chang" />
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:src="@drawable/iname"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="250dp"
+        />
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:src="@drawable/inputdate"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="320dp"
+        />
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="420dp"
+        android:src="@drawable/outdate" />
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="560dp"
+        android:src="@drawable/explain" />
+    <EditText
+        android:layout_width="448dp"
+        android:layout_height="83dp"
+        android:background="@drawable/allbox"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="245dp"
+        />
+
+    <EditText
+        android:layout_width="180dp"
+        android:layout_height="83dp"
+        android:layout_marginLeft="275dp"
+        android:layout_marginTop="350dp"
+        android:background="@drawable/allbox"
+        android:inputType="number" />
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="89dp"
+        android:background="@drawable/splite"
+        android:layout_marginLeft="455dp"
+        android:layout_marginTop="350dp"
+        />
+
+    <EditText
+        android:layout_width="90dp"
+        android:layout_height="83dp"
+        android:layout_marginLeft="499dp"
+        android:layout_marginTop="350dp"
+        android:background="@drawable/allbox"
+        android:inputType="number" />
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="89dp"
+        android:background="@drawable/splite"
+        android:layout_marginLeft="587dp"
+        android:layout_marginTop="350dp"
+        />
+
+    <EditText
+        android:layout_width="90dp"
+        android:layout_height="83dp"
+        android:layout_marginLeft="630dp"
+        android:layout_marginTop="350dp"
+        android:background="@drawable/allbox"
+        android:inputType="number" />
+
+    <EditText
+        android:layout_width="180dp"
+        android:layout_height="83dp"
+        android:layout_marginLeft="275dp"
+        android:layout_marginTop="452dp"
+        android:background="@drawable/allbox"
+        android:inputType="number" />
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="89dp"
+        android:background="@drawable/splite"
+        android:layout_marginLeft="455dp"
+        android:layout_marginTop="452dp"
+        />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="89dp"
+        android:background="@drawable/splite"
+        android:layout_marginLeft="587dp"
+        android:layout_marginTop="452dp"
+        />
+
+    <EditText
+        android:layout_width="90dp"
+        android:layout_height="83dp"
+        android:layout_marginLeft="630dp"
+        android:layout_marginTop="452dp"
+        android:background="@drawable/allbox"
+        android:inputType="number" />
+
+    <EditText
+        android:layout_width="440dp"
+        android:layout_height="320dp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="558dp"
+        android:background="@drawable/bigbox" />
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="80dp"
+        android:background="@drawable/menubutton"
+        android:layout_marginLeft="750dp"
+        android:layout_marginTop="25dp"
+        />
+    <Button
+        android:id="@+id/yes"
+        android:layout_width="169dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="1020dp"
+        android:background="@drawable/yes"
+        />
+    <Button
+        android:id="@+id/no"
+        android:layout_width="169dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="420dp"
+        android:layout_marginTop="1020dp"
+        android:background="@drawable/no"
+        />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="90dp"
+        android:layout_height="83dp"
+        android:layout_marginLeft="499dp"
+        android:layout_marginTop="452dp"
+        android:background="@drawable/allbox"
+        android:inputType="number" />
+</FrameLayout>

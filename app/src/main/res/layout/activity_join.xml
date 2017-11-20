@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9F9F9">
+
+    <ImageView
+        android:layout_width="230dp"
+        android:layout_height="160dp"
+        android:src="@drawable/welcome_chang"
+        android:layout_marginLeft="290dp"
+        android:layout_marginTop="230dp"
+        />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:src="@drawable/id"
+        android:layout_marginLeft="-370dp"
+        android:layout_marginTop="420dp"
+        />
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:src="@drawable/pass"
+        android:layout_marginTop="540dp"
+        android:layout_marginLeft="-154dp"
+        />
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:src="@drawable/name"
+        android:layout_marginTop="660dp"
+        android:layout_marginLeft="-150dp"
+        />
+    <EditText
+        android:id="@+id/id"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:background="@drawable/box"
+        android:layout_marginTop="410dp"
+        android:layout_marginLeft="20dp"
+        />
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:background="@drawable/box"
+        android:layout_marginTop="530dp"
+        android:layout_marginLeft="-300dp"
+        />
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:background="@drawable/box"
+        android:layout_marginTop="655dp"
+        android:layout_marginLeft="-300dp"
+        />
+    <Button
+        android:id="@+id/add_member"
+        android:layout_width="150dp"
+        android:layout_height="85dp"
+        android:background="@drawable/add_member"
+        android:layout_marginTop="840dp"
+        android:layout_marginLeft="-380dp"
+        />
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="150dp"
+        android:layout_height="85dp"
+        android:background="@drawable/cancel"
+        android:layout_marginTop="840dp"
+        android:layout_marginLeft="30dp"
+        />
+</LinearLayout>
