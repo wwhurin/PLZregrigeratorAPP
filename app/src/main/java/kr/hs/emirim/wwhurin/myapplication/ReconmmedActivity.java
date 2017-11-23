@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -63,6 +65,32 @@ public class ReconmmedActivity extends AppCompatActivity {
 
         GetData task = new GetData();
         task.execute("http://wwhurin.dothome.co.kr/menu2.php");
+
+        mlistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> adapterView,
+                                    View view, int position, long id) {
+
+                //클릭한 아이템의 문자열을 가져옴
+                HashMap<String,String> map =(HashMap<String,String>)adapterView.getItemAtPosition(position);
+                String name= map.get(TAG_NAME);
+                Log.d("selected_item::::", name);
+                Log.d("selected_item::::", Food_number);
+
+                Intent intent1 = new Intent(ReconmmedActivity.this, ShowRecommendActivity.class);
+                intent1.putExtra("id", ID);
+                intent1.putExtra("menuname", map.get("menuname"));
+                intent1.putExtra("img1", map.get("img1"));
+                intent1.putExtra("img2", map.get("img2"));
+                intent1.putExtra("img3", map.get("img3"));
+                intent1.putExtra("time", map.get("time"));
+                intent1.putExtra("how", map.get("how"));
+                startActivity(intent1);
+                finish();
+
+            }
+        });
     }
 
 
@@ -226,6 +254,12 @@ public class ReconmmedActivity extends AppCompatActivity {
                     JSONObject item = jsonArray.getJSONObject(i);
 
                     String name = item.getString(TAG_NAME);
+                    String ing1=item.getString("ingredient1");
+                    String ing2=item.getString("ingredient2");
+                    String ing3=item.getString("ingredient3");
+                    String time=item.getString("time");
+                    String how=item.getString("how");
+
                     Food_number=item.getString("num");
                     Log.d("이름~~~~: ", name+""+Food_number);
 
@@ -233,6 +267,11 @@ public class ReconmmedActivity extends AppCompatActivity {
 
                     hashMap.put(TAG_NAME, name);
                     hashMap.put("num", Food_number);
+                    hashMap.put("ing1", ing1);
+                    hashMap.put("ing2", ing2);
+                    hashMap.put("ing3", ing3);
+                    hashMap.put("time", time);
+                    hashMap.put("how", how);
                     // hashMap.put(TAG_ADDRESS, address);
 
                     mArrayList.add(hashMap);
