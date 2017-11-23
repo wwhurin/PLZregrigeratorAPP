@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="100dp"
+        android:layout_height="125dp"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:layout_marginLeft="700dp"
+        android:layout_marginTop="2dp"
+        />
+
+    <ImageView
+        android:layout_width="800dp"
+        android:layout_height="300dp"
+        android:src="@drawable/code_bar"
+        android:layout_marginTop="-85dp"
+        />
+    <ImageView
+        android:layout_width="800dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="953dp"
+        android:src="@drawable/under_bar" />
+    <ImageButton
+        android:layout_width="30dp"
+        android:layout_height="80dp"
+        android:background="@drawable/menubutton"
+        android:layout_marginLeft="750dp"
+        android:layout_marginTop="25dp"
+        />
+    <ImageView
+        android:layout_width="700dp"
+        android:layout_height="700dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="215dp"
+        android:src="@drawable/list_chang" />
+    <ImageView
+        android:layout_width="230dp"
+        android:layout_height="100dp"
+        android:src="@drawable/letter1"
+        android:layout_marginTop="245dp"
+        android:layout_marginLeft="280dp"
+        />
+    <EditText
+        android:layout_width="290dp"
+        android:layout_height="70dp"
+        android:background="@drawable/box"
+        android:layout_marginTop="340dp"
+        android:layout_marginLeft="250dp"
+        />
+    <ImageView
+        android:layout_width="480dp"
+        android:layout_height="250dp"
+        android:src="@drawable/code_explain"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="155dp"
+        />
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:src="@drawable/user_id"
+        android:layout_marginTop="700dp"
+        android:layout_marginLeft="180dp"
+        />
+    <EditText
+        android:layout_width="280dp"
+        android:layout_height="70dp"
+        android:background="@drawable/box"
+        android:layout_marginTop="685dp"
+        android:layout_marginLeft="300dp"
+        />
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="40dp"
+        android:src="@drawable/user_code"
+        android:layout_marginTop="780dp"
+        android:layout_marginLeft="180dp"
+        />
+    <EditText
+        android:layout_width="280dp"
+        android:layout_height="70dp"
+        android:background="@drawable/box"
+        android:layout_marginTop="770dp"
+        android:layout_marginLeft="300dp"
+        />
+    <Button
+        android:id="@+id/n4"
+        android:layout_width="169dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="420dp"
+        android:layout_marginTop="1020dp"
+        android:background="@drawable/no"
+        />
+
+    <Button
+        android:id="@+id/y4"
+        android:layout_width="169dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="1020dp"
+        android:background="@drawable/yes" />
+</FrameLayout>

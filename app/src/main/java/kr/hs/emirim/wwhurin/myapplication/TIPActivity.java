@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -26,42 +28,71 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class InputActivity extends AppCompatActivity {
-    String ID;
-    String TAG="Input, 하루남음";
+public class TIPActivity extends AppCompatActivity {
 
     private static final String TAG_JSON="webnautes";
-    private static final String TAG_NAME = "name";
+    private static final String TAG_NAME = "foodname";
     private static final String TAG_INPUT ="inputdate";
     private static final String TAG_OUTPUT ="outdate";
     private static final String TAG_CONTENT ="content";
 
-    private static  HashMap<String, String> hashMap;
+    private static HashMap<String, String> hashMap;
 
+    private static String ID;
+    private static String Food_number;
+
+    private String TAG="TAG";
     ArrayList<HashMap<String, String>> mArrayList;
     ListView mlistView;
     String mJsonString;
-    private static String Food_number;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_input);
+        setContentView(R.layout.activity_tip);
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         //Drawer drawer = new DrawerBuilder().withActivity(this).withToolbar(toolbar).build();
         setSupportActionBar(toolbar);
 
-        mlistView = (ListView) findViewById(R.id.listview);
-        mArrayList = new ArrayList<>();
-
         Intent intent=getIntent();
         ID=intent.getExtras().getString("id");
-        Log.d("!!!!!!!: ", ID);
+        Log.d("!!!!!!!1112222: ", ID);
+
+        mlistView = (ListView) findViewById(R.id.listview);
+        // mTextViewResult=(TextView) findViewById(R.id.textView_main_result);
+        mArrayList = new ArrayList<>();
 
         GetData task = new GetData();
-        task.execute("http://wwhurin.dothome.co.kr/input.php");
+        task.execute("http://wwhurin.dothome.co.kr/tip.php");
+
+        mlistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> adapterView,
+                                    View view, int position, long id) {
+
+                //클릭한 아이템의 문자열을 가져옴
+                HashMap<String,String> map =(HashMap<String,String>)adapterView.getItemAtPosition(position);
+                String name= map.get(TAG_NAME);
+                Log.d("selected_item::::", name);
+                Log.d("selected_item::::", Food_number);
+
+                Intent intent1 = new Intent(TIPActivity.this, ShowTipActivity.class);
+                intent1.putExtra("id", ID);
+                intent1.putExtra("NUMBER", map.get("num"));
+                intent1.putExtra("foodname", name);
+                intent1.putExtra("HOW", map.get("howto"));
+                intent1.putExtra("PLUS", map.get("plus"));
+                startActivity(intent1);
+                finish();
+
+            }
+        });
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(android.view.Menu menu) {
@@ -74,34 +105,34 @@ public class InputActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.first:
                 Toast.makeText(this, "D-1",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(InputActivity.this, InputActivity.class);
+                Intent intent = new Intent(getApplicationContext(), InputActivity.class);
                 intent.putExtra("id", ID);
                 startActivity(intent);
                 break;
             case R.id.second:
                 Toast.makeText(this, "메뉴목록",Toast.LENGTH_SHORT).show();
-                intent = new Intent(InputActivity.this, Menu1Activity.class);
+                intent = new Intent(getApplicationContext(), Menu1Activity.class);
                 intent.putExtra("id", ID);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.third:
                 Toast.makeText(this, "추천 메뉴",Toast.LENGTH_SHORT).show();
-                intent = new Intent(InputActivity.this, ReconmmedActivity.class);
+                intent = new Intent(getApplicationContext(), ReconmmedActivity.class);
                 intent.putExtra("id", ID);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.fourth:
                 Toast.makeText(this, "음식관리 TIP",Toast.LENGTH_SHORT).show();
-                intent = new Intent(InputActivity.this, TIPActivity.class);
+                intent = new Intent(getApplicationContext(), TIPActivity.class);
                 intent.putExtra("id", ID);
                 startActivity(intent);
                 finish();
                 break;
             case R.id.fifth:
                 Toast.makeText(this, "계정연동",Toast.LENGTH_SHORT).show();
-                intent = new Intent(InputActivity.this, CodeActivity.class);
+                intent = new Intent(getApplicationContext(), CodeActivity.class);
                 intent.putExtra("id", ID);
                 startActivity(intent);
                 finish();
@@ -120,7 +151,7 @@ public class InputActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
 
-            progressDialog = ProgressDialog.show(InputActivity.this,
+            progressDialog = ProgressDialog.show(TIPActivity.this,
                     "Please Wait", null, true, true);
         }
 
@@ -198,7 +229,7 @@ public class InputActivity extends AppCompatActivity {
             super.onPostExecute(result);
 
             progressDialog.dismiss();
-           // mTextViewResult.setText(result);
+//            mTextViewResult.setText(result);
             Log.d(TAG, "response  - " + result);
 
             if (result == null) {
@@ -223,19 +254,24 @@ public class InputActivity extends AppCompatActivity {
 
                     String name = item.getString(TAG_NAME);
                     Food_number=item.getString("num");
+                    String howto=item.getString("how");
+                    String p=item.getString("plus");
+                    Log.d("이름~~~~: ", p);
                     Log.d("이름~~~~: ", name+""+Food_number);
 
                     hashMap = new HashMap<>();
 
                     hashMap.put(TAG_NAME, name);
                     hashMap.put("num", Food_number);
+                    hashMap.put("howto", howto);
+                    hashMap.put("plus", p);
                     // hashMap.put(TAG_ADDRESS, address);
 
                     mArrayList.add(hashMap);
                 }
 
                 ListAdapter adapter = new SimpleAdapter(
-                        InputActivity.this, mArrayList, R.layout.menu_item_list,
+                        TIPActivity.this, mArrayList, R.layout.menu_item_list,
                         new String[]{TAG_NAME},
                         new int[]{R.id.textView_list_name}
                 );
@@ -252,5 +288,4 @@ public class InputActivity extends AppCompatActivity {
 
         }
     }
-
 }

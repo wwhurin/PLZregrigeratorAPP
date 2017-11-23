@@ -56,6 +56,18 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+        Button buttoninmem = (Button)findViewById(R.id.welcome);
+        buttoninmem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+               Intent intent = new Intent(LoginActivity.this, JoinActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
     }
 
     class InsertData extends AsyncTask<String, Void, String> {

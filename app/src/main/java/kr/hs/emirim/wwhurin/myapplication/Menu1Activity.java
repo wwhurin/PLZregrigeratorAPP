@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -13,6 +15,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -51,16 +54,19 @@ public class Menu1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu1);
 
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        //Drawer drawer = new DrawerBuilder().withActivity(this).withToolbar(toolbar).build();
+        setSupportActionBar(toolbar);
 
         Intent intent=getIntent();
         ID=intent.getExtras().getString("id");
         Log.d("!!!!!!!1112222: ", ID);
 
         mlistView = (ListView) findViewById(R.id.listview);
-        mTextViewResult=(TextView) findViewById(R.id.textView_main_result);
+       // mTextViewResult=(TextView) findViewById(R.id.textView_main_result);
         mArrayList = new ArrayList<>();
 
-        Button menu1 = (Button) findViewById(R.id.button7) ;
+        Button menu1 = (Button) findViewById(R.id.add_ingredient) ;
         menu1.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -84,10 +90,12 @@ public class Menu1Activity extends AppCompatActivity {
                 //클릭한 아이템의 문자열을 가져옴
                 HashMap<String,String> map =(HashMap<String,String>)adapterView.getItemAtPosition(position);
                 String name= map.get(TAG_NAME);
+                String num=map.get("num");
                 Log.d("selected_item::::", name);
+                Log.d("selected_item::::", num);
 
                 Intent intent1 = new Intent(Menu1Activity.this, GetItemActivity.class);
-                intent1.putExtra("NUMBER", Food_number);
+                intent1.putExtra("NUMBER", num);
                 startActivity(intent1);
                 finish();
 
@@ -95,6 +103,54 @@ public class Menu1Activity extends AppCompatActivity {
         });
 
 
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.first:
+                Toast.makeText(this, "D-1",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), InputActivity.class);
+                intent.putExtra("id", ID);
+                startActivity(intent);
+                break;
+            case R.id.second:
+                Toast.makeText(this, "메뉴목록",Toast.LENGTH_SHORT).show();
+                intent = new Intent(getApplicationContext(), Menu1Activity.class);
+                intent.putExtra("id", ID);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.third:
+                Toast.makeText(this, "추천 메뉴",Toast.LENGTH_SHORT).show();
+                intent = new Intent(getApplicationContext(), ReconmmedActivity.class);
+                intent.putExtra("id", ID);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.fourth:
+                Toast.makeText(this, "음식관리 TIP",Toast.LENGTH_SHORT).show();
+                intent = new Intent(getApplicationContext(), TIPActivity.class);
+                intent.putExtra("id", ID);
+                startActivity(intent);
+                finish();
+                break;
+            case R.id.fifth:
+                Toast.makeText(this, "계정연동",Toast.LENGTH_SHORT).show();
+                intent = new Intent(getApplicationContext(), CodeActivity.class);
+                intent.putExtra("id", ID);
+                startActivity(intent);
+                finish();
+                break;
+        }
+        return true;
     }
 
 
@@ -185,12 +241,12 @@ public class Menu1Activity extends AppCompatActivity {
             super.onPostExecute(result);
 
             progressDialog.dismiss();
-            mTextViewResult.setText(result);
+//            mTextViewResult.setText(result);
             Log.d(TAG, "response  - " + result);
 
             if (result == null) {
 
-                mTextViewResult.setText(errorString);
+ //               mTextViewResult.setText(errorString);
             } else {
 
                 mJsonString = result;
@@ -210,6 +266,7 @@ public class Menu1Activity extends AppCompatActivity {
 
                     String name = item.getString(TAG_NAME);
                     Food_number=item.getString("num");
+
                     Log.d("이름~~~~: ", name+""+Food_number);
 
                    hashMap = new HashMap<>();

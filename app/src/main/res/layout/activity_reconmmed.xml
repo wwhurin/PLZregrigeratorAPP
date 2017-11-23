@@ -2,6 +2,7 @@
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="100dp"
@@ -15,7 +16,7 @@
     <ImageView
         android:layout_width="800dp"
         android:layout_height="300dp"
-        android:src="@drawable/show_bar"
+        android:src="@drawable/recommend_bar"
         android:layout_marginTop="-85dp"
         />
     <ImageView
@@ -32,7 +33,6 @@
         android:layout_marginLeft="750dp"
         android:layout_marginTop="25dp"
         />
-
     <ListView
         android:id="@+id/listview"
         android:layout_width="800dp"
@@ -41,12 +41,6 @@
         android:choiceMode="singleChoice"
         android:divider="#923E4C"
         android:dividerHeight="1.5dp" />
-    <Button
-        android:id="@+id/add_ingredient"
-        android:layout_width="169dp"
-        android:layout_height="100dp"
-        android:layout_marginLeft="310dp"
-        android:layout_marginTop="1020dp"
-        android:background="@drawable/add_button"
-        />
+
+
 </FrameLayout>

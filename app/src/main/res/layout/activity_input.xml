@@ -3,6 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="100dp"
+        android:layout_height="125dp"
+        android:background="#923E4C"
+        android:elevation="4dp"
+        android:layout_marginLeft="700dp"
+        android:layout_marginTop="2dp"
+        />
+
     <ImageView
         android:layout_width="800dp"
         android:layout_height="300dp"

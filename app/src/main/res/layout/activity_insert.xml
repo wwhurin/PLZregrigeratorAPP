@@ -3,6 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="100dp"
+        android:layout_height="125dp"
+        android:background="#923E4C"
+        android:elevation="4dp"
+        android:layout_marginLeft="700dp"
+        android:layout_marginTop="2dp"
+        />
+
     <ImageView
         android:layout_width="800dp"
         android:layout_height="300dp"
@@ -48,15 +58,9 @@
         android:layout_marginLeft="150dp"
         android:layout_marginTop="560dp"
         android:src="@drawable/explain" />
-    <EditText
-        android:layout_width="448dp"
-        android:layout_height="83dp"
-        android:background="@drawable/allbox"
-        android:layout_marginLeft="270dp"
-        android:layout_marginTop="245dp"
-        />
 
     <EditText
+        android:id="@+id/ind1"
         android:layout_width="180dp"
         android:layout_height="83dp"
         android:layout_marginLeft="275dp"
@@ -72,6 +76,7 @@
         />
 
     <EditText
+        android:id="@+id/ind2"
         android:layout_width="90dp"
         android:layout_height="83dp"
         android:layout_marginLeft="499dp"
@@ -87,6 +92,7 @@
         />
 
     <EditText
+        android:id="@+id/ind3"
         android:layout_width="90dp"
         android:layout_height="83dp"
         android:layout_marginLeft="630dp"
@@ -95,6 +101,7 @@
         android:inputType="number" />
 
     <EditText
+        android:id="@+id/out1"
         android:layout_width="180dp"
         android:layout_height="83dp"
         android:layout_marginLeft="275dp"
@@ -118,6 +125,7 @@
         />
 
     <EditText
+        android:id="@+id/out3"
         android:layout_width="90dp"
         android:layout_height="83dp"
         android:layout_marginLeft="630dp"
@@ -126,6 +134,7 @@
         android:inputType="number" />
 
     <EditText
+        android:id="@+id/content"
         android:layout_width="440dp"
         android:layout_height="320dp"
         android:layout_marginLeft="280dp"
@@ -156,11 +165,19 @@
         />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/out2"
         android:layout_width="90dp"
         android:layout_height="83dp"
         android:layout_marginLeft="499dp"
         android:layout_marginTop="452dp"
         android:background="@drawable/allbox"
         android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="448dp"
+        android:layout_height="83dp"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="245dp"
+        android:background="@drawable/allbox" />
 </FrameLayout>

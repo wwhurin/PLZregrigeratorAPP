@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_main"
+        android:icon="@mipmap/menu_button"
+        android:orderInCategory="0"
+        android:title="menu"
+        app:showAsAction="always">
+
+        <menu>
+
+            <item
+                android:id="@+id/first"
+                android:title="D-1" />
+            <item
+                android:id="@+id/second"
+                android:title="재료목록" />
+
+            <item
+                android:id="@+id/third"
+                android:title="추천음식" />
+            <item
+                android:id="@+id/fourth"
+                android:title="음식관리 팁" />
+            <item
+                android:id="@+id/fifth"
+                android:title="코드연동" />
+        </menu>
+    </item>
+</menu>
