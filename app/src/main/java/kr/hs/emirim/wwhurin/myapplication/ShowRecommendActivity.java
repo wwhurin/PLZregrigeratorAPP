@@ -5,11 +5,16 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ShowRecommendActivity extends AppCompatActivity {
 
     private static String ID;
+
+    TextView nameT, ing1T, ing2T, ing3T, timeT, howT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,15 +25,40 @@ public class ShowRecommendActivity extends AppCompatActivity {
         //Drawer drawer = new DrawerBuilder().withActivity(this).withToolbar(toolbar).build();
         setSupportActionBar(toolbar);
 
+        nameT=(TextView) findViewById(R.id.name);
+        ing1T=(TextView) findViewById(R.id.ing1);
+        ing2T=(TextView) findViewById(R.id.ing2);
+        ing3T=(TextView) findViewById(R.id.ing3);
+        timeT=(TextView) findViewById(R.id.time);
+        howT=(TextView) findViewById(R.id.how);
+
+
         Intent intent=getIntent();
         ID=intent.getExtras().getString("id");
-        ID=intent.getExtras().getString("id");
         String menuname=intent.getExtras().getString("menuname");
-        String ing1=intent.getExtras().getString("ing1");
-        String ing2=intent.getExtras().getString("ing2");
-        String ing3=intent.getExtras().getString("ing3");
+        String ing1=intent.getExtras().getString("img1");
+        String ing2=intent.getExtras().getString("img2");
+        String ing3=intent.getExtras().getString("img3");
         String time=intent.getExtras().getString("time");
         String how=intent.getExtras().getString("time");
+
+        nameT.setText(menuname);
+        ing1T.setText(ing1);
+        ing2T.setText(ing2);
+        ing3T.setText(ing3);
+        timeT.setText(time);
+        howT.setText(how);
+
+        Button buttoncancle = (Button)findViewById(R.id.y2);
+        buttoncancle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(ShowRecommendActivity.this, ReconmmedActivity.class);
+                intent.putExtra("id", ID);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
     }

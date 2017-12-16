@@ -81,9 +81,9 @@ public class ReconmmedActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(ReconmmedActivity.this, ShowRecommendActivity.class);
                 intent1.putExtra("id", ID);
                 intent1.putExtra("menuname", map.get("menuname"));
-                intent1.putExtra("img1", map.get("img1"));
-                intent1.putExtra("img2", map.get("img2"));
-                intent1.putExtra("img3", map.get("img3"));
+                intent1.putExtra("img1", map.get("ing1"));
+                intent1.putExtra("img2", map.get("ing2"));
+                intent1.putExtra("img3", map.get("ing3"));
                 intent1.putExtra("time", map.get("time"));
                 intent1.putExtra("how", map.get("how"));
                 startActivity(intent1);

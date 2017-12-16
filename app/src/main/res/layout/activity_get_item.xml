@@ -43,13 +43,14 @@
         android:layout_marginLeft="80dp"
         android:layout_marginTop="240dp"
         android:src="@drawable/menu_name" />
-    <EditText
+
+    <TextView
+        android:id="@+id/foodname"
         android:layout_width="450dp"
         android:layout_height="70dp"
-        android:background="@drawable/box"
-        android:layout_marginTop="230dp"
         android:layout_marginLeft="260dp"
-        />
+        android:layout_marginTop="230dp"
+        android:background="@drawable/box" />
 
     <ImageView
         android:layout_width="160dp"
@@ -58,13 +59,14 @@
         android:layout_marginTop="310dp"
         android:layout_marginLeft="80dp"
         />
-    <EditText
+
+    <TextView
+        android:id="@+id/iny"
         android:layout_width="450dp"
         android:layout_height="70dp"
-        android:background="@drawable/box"
-        android:layout_marginTop="310dp"
         android:layout_marginLeft="260dp"
-        />
+        android:layout_marginTop="310dp"
+        android:background="@drawable/box" />
     <ImageView
         android:layout_width="130dp"
         android:layout_height="50dp"
@@ -72,13 +74,14 @@
         android:layout_marginTop="390dp"
         android:layout_marginLeft="80dp"
         />
-    <EditText
+
+    <TextView
+        android:id="@+id/inm"
         android:layout_width="450dp"
         android:layout_height="70dp"
-        android:background="@drawable/box"
-        android:layout_marginTop="390dp"
         android:layout_marginLeft="260dp"
-        />
+        android:layout_marginTop="390dp"
+        android:background="@drawable/box" />
     <ImageView
         android:layout_width="130dp"
         android:layout_height="50dp"
@@ -86,13 +89,14 @@
         android:layout_marginTop="470dp"
         android:layout_marginLeft="80dp"
         />
-    <EditText
+
+    <TextView
+        android:id="@+id/ind"
         android:layout_width="450dp"
         android:layout_height="70dp"
-        android:background="@drawable/box"
-        android:layout_marginTop="470dp"
         android:layout_marginLeft="260dp"
-        />
+        android:layout_marginTop="470dp"
+        android:background="@drawable/box" />
     <ImageView
         android:layout_width="235dp"
         android:layout_height="100dp"
@@ -100,13 +104,14 @@
         android:layout_marginTop="525dp"
         android:layout_marginLeft="80dp"
         />
-    <EditText
+
+    <TextView
+        android:id="@+id/outy"
         android:layout_width="390dp"
         android:layout_height="70dp"
-        android:background="@drawable/box"
-        android:layout_marginTop="550dp"
         android:layout_marginLeft="320dp"
-        />
+        android:layout_marginTop="550dp"
+        android:background="@drawable/box" />
     <ImageView
         android:layout_width="200dp"
         android:layout_height="80dp"
@@ -114,13 +119,14 @@
         android:layout_marginTop="620dp"
         android:layout_marginLeft="80dp"
         />
-    <EditText
+
+    <TextView
+        android:id="@+id/outm"
         android:layout_width="390dp"
         android:layout_height="70dp"
-        android:background="@drawable/box"
-        android:layout_marginTop="630dp"
         android:layout_marginLeft="320dp"
-        />
+        android:layout_marginTop="630dp"
+        android:background="@drawable/box" />
     <ImageView
         android:layout_width="200dp"
         android:layout_height="80dp"
@@ -128,13 +134,14 @@
         android:layout_marginTop="703dp"
         android:layout_marginLeft="80dp"
         />
-    <EditText
+
+    <TextView
+        android:id="@+id/outd"
         android:layout_width="390dp"
         android:layout_height="70dp"
-        android:background="@drawable/box"
-        android:layout_marginTop="710dp"
         android:layout_marginLeft="320dp"
-        />
+        android:layout_marginTop="710dp"
+        android:background="@drawable/box" />
 
     <ImageView
         android:layout_width="150dp"
@@ -143,13 +150,14 @@
         android:layout_marginTop="788dp"
         android:layout_marginLeft="90dp"
         />
-    <EditText
+
+    <TextView
+        android:id="@+id/content"
         android:layout_width="450dp"
         android:layout_height="110dp"
-        android:background="@drawable/box"
-        android:layout_marginTop="788dp"
         android:layout_marginLeft="260dp"
-        />
+        android:layout_marginTop="788dp"
+        android:background="@drawable/box" />
 
     <Button
         android:id="@+id/y1"

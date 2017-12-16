@@ -51,6 +51,8 @@ public class JoinActivity extends AppCompatActivity {
                 task.execute(name,pass, nick);
 
 
+
+
                 mEditTextName.setText("");
                 mEditTextPass.setText("");
                 mEditTextNick.setText("");
@@ -89,6 +91,9 @@ public class JoinActivity extends AppCompatActivity {
 
             progressDialog.dismiss();
             //mTextViewResult.setText(result);
+            Intent i = new Intent(JoinActivity.this, LoginActivity.class);
+            startActivity(i);
+            finish();
             Log.d(TAG, "POST response  - " + result);
         }
 

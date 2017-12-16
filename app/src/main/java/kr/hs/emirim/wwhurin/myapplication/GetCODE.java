@@ -11,8 +11,6 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import static android.os.Build.ID;
-
 /**
  * Created by LG on 2017-11-24.
  */
@@ -24,6 +22,11 @@ public class GetCODE {
     String TAG="코드받아오기";
     GetCODE(String ID){
         id=ID;
+        Log.d("아ㅓㅏ러아러ㅣㅏㅇ아!!!", ID);
+        GetData getData=new GetData();
+        getData.execute("http://wwhurin.dothome.co.kr/getCode.php");
+
+        Log.d("아ㅓㅏ러아러ㅣㅏㅇ아!!!", Code);
     }
 
 
@@ -47,7 +50,7 @@ public class GetCODE {
         protected String doInBackground(String... params) {
 
             String serverURL = params[0];
-            String postParameters="id="+ID;
+            String postParameters="id="+id;
 
 
             try {
@@ -115,7 +118,8 @@ public class GetCODE {
 
             progressDialog.dismiss();
 //            mTextViewResult.setText(result);
-            Log.d(TAG, "response  - " + result);
+            Log.d(TAG, "response  - !!!!!!!!!" + result);
+
 
             if (result == null) {
 
